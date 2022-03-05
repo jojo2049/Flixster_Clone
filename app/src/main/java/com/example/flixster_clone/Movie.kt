@@ -16,7 +16,7 @@ data class Movie (
 ) : Parcelable {
     @IgnoredOnParcel
     val posterImageUrl = "https://image.tmdb.org/t/p/w342/$posterPath"
-    val backdropImageUrl = "https://image.tmdb.org/t/p/w780/$backdropPath"
+//    val backdropImageUrl = "https://image.tmdb.org/t/p/w780/$backdropPath"
     companion object {
         fun fromJsonArray(movieJsonArray: JSONArray): List<Movie> {
             val movies = mutableListOf<Movie>()

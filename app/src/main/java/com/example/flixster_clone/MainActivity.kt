@@ -25,15 +25,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         rvMovies = findViewById(R.id.rvMovies)
 
-        val image: String
+        lateinit var image: String
         val orientation = resources.configuration.orientation
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             image = "portrait"
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            setView = "landscape"
+            image = "landscape"
         }
 
-        val movieAdapter = MovieAdapter(this, movies, set)
+        val movieAdapter = MovieAdapter(this, movies, image)
         rvMovies.adapter = movieAdapter
         rvMovies.layoutManager = LinearLayoutManager(this)
 

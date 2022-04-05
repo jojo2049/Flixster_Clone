@@ -16,13 +16,13 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:text="Scream"
-        android:textColor="@color/white"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/white" />
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
@@ -39,14 +39,13 @@
         android:theme="@style/RatingBar"/>
 
 
-
     <TextView
         android:id="@+id/tvOverview"
-        android:layout_width="match_parent"
+        android:layout_width="349dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="Twenty-five years after a streak of brutal murders shocked the quiet town of Woodsboro, a new killer has donned the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town’s deadly past."
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 </LinearLayout>

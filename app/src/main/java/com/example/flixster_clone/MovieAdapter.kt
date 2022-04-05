@@ -49,8 +49,11 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
             if (setView == "portrait") {
+                //dontanimate() prevents image loading to placeholder size
+                //Glide.with(context).load(movie.posterImageUrl).placeholder(R.drawable.ic_baseline_hourglass_top_24).dontAnimate().into(ivPoster)
                 Glide.with(context).load(movie.posterImageUrl).into(ivPoster)
             } else if (setView == "landscape") {
+                //Glide.with(context).load(movie.backdropImageUrl).placeholder(R.drawable.ic_baseline_hourglass_top_24).dontAnimate().into(ivPoster)
                 Glide.with(context).load(movie.backdropImageUrl).into(ivPoster)
             }
 

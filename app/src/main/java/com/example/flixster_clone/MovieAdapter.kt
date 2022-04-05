@@ -2,6 +2,7 @@ package com.example.flixster_clone
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,8 @@ import com.bumptech.glide.Glide
 
 const val MOVIE_EXTRA = "MOVIE_EXTRA"
 private const val TAG = "MovieAdapter"
-class MovieAdapter(private val context: Context, private val movies: List<Movie>)
+
+class MovieAdapter(private val context: Context, private val movies: List<Movie>, private val setView: String)
     : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     // Expensive operation
@@ -46,7 +48,12 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         fun bind(movie: Movie) {
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
-            Glide.with(context).load(movie.posterImageUrl).into(ivPoster)
+            if (setView == "portrait") {
+                Glide.with(context).load(movie.posterImageUrl).into(ivPoster)
+            } else if (setView == "landscape") {
+                Glide.with(context).load(movie.backdropImageUrl).into(ivPoster)
+            }
+
         }
 
         override fun onClick(p0: View?) {
